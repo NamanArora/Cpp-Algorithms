@@ -8,7 +8,7 @@
 int binary(int a[],int size,int search)
 {
  int middle=0,first=0,last=size-1;
- while(first<=last)
+ while(first<=last) //remember this!
  {
   middle=(first+last)/2;
   if(search>a[middle])
