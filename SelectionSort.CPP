@@ -13,7 +13,7 @@ void selectionsort(int a[],int size)
   small=a[i];
    //search for smallest no in unsorted array
    for(int j=i; j<size; j++)
-    if(a[j]<=small)
+    if(a[j]<=small) //incase no number is smaller than 'small' then keep the loc=original
     {
       loc=j;
       small=a[j];
