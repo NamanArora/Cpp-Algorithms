@@ -10,7 +10,7 @@ void insertionsort(int a[],int size)
   for(int i=1; i<size; i++)
   {
    int j=i-1;
-   int p=a[i];
+   int p=a[i]; //remember this because a[i] gets overwritten by a[j+1]=a[j]; so we need to preserve it
    while(a[j]>p && j>=0)
    {
     a[j+1]=a[j];
