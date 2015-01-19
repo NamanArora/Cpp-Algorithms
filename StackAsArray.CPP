@@ -23,7 +23,7 @@ class stack
  }
  void pop()
  {
-  if(top==-1)
+  if(top==-1) //we keep top=-1 becuz even top[0] carries a value and we cant use it as a check for empty array
   cout << "Stack empty";
   else
   {
