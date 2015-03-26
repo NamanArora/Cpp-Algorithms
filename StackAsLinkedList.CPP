@@ -39,7 +39,6 @@ class stack
   if(top==NULL)
   cout << "Stack is empty" << endl;
   else{
-  cout << top;
   node *t=top;
   cout << t;
   cout << "Delete data: " << top->data << endl;
