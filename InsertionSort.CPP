@@ -9,8 +9,8 @@ void insertionsort(int a[],int size)
 {
   for(int i=1; i<size; i++)
   {
-   int j=i-1;
-   int p=a[i]; //remember this because a[i] gets overwritten by a[j+1]=a[j]; so we need to preserve it
+   int j=i-1; //top of sorted array
+   int p=a[i]; //new element to be inserted
    while(a[j]>p && j>=0)
    {
     a[j+1]=a[j];
