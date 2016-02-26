@@ -7,22 +7,21 @@
 
 void selectionsort(int a[],int size)
 {
-  int temp,small,loc;
-  for(int i=0; i<size; i++)
-  {
-  small=a[i];
-   //search for smallest no in unsorted array
-   for(int j=i; j<size; j++)
-    if(a[j]<=small) //incase no number is smaller than 'small' then keep the loc=original
+  int min,loc;
+    for(int i=1; i<size; i++)
     {
-      loc=j;
-      small=a[j];
+        min=a[i-1];
+        loc=i-1;
+        for(int j=i; j<size; j++)
+            if(a[j]<min)
+                loc=j;
+        if(loc!=i-1)
+        {
+            int temp=a[loc];
+            a[loc]=a[i-1];
+            a[i-1]=temp;
+        }
     }
-
-   temp=a[i];
-   a[i]=a[loc];
-   a[loc]=temp;
-  }
 }
 
 void main()
