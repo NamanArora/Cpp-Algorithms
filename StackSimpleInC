@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+#define size 5
+
+struct stack
+{
+    int a[size];
+    int top;
+}obj;
+
+void push(int n)
+    {
+        if(obj.top==size-1)
+            printf("Stack full\n");
+            else
+            {
+                obj.top++;
+                obj.a[obj.top]=n;
+                printf("Pushed: %d\n",n);
+            }
+    }
+    int pop()
+    {
+        if(obj.top==-1){
+            printf("Stack is empty");
+            return -1;
+        }
+            else
+            {
+                int temp=obj.a[obj.top];
+                obj.top--;
+                return temp; 
+            }
+    }
+void init()
+{
+    obj.top=-1;
+}
+int main(int argc, char **argv)
+{
+    init();
+    for(int i=0; i<10; i++)
+    {
+        push(i);
+        
+    }
+    for(int i=0; i<10; i++)
+    {
+        printf("Popped: %d\n",pop());
+    }
+	return 0;
+}
