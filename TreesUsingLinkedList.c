@@ -61,6 +61,44 @@ int search(int data, tree *node)
     return 0;
 }
 
+int height(tree *node)
+{
+    if(node == NULL)
+        return 0;
+    else
+    {
+        int lheight=height(node->left);
+        int rheight=height(node->right);
+        
+        if(lheight>rheight)
+            return lheight+1;
+        else
+            return rheight+1;
+    }
+}
+
+void printer(int i,tree *node)
+{
+    if(node==NULL)
+        return;
+    if(i==0)
+        printf("%d ",node->info);
+    else
+    {
+        printer(i-1,node->left);
+        printer(i-1,node->right);
+    }
+}
+
+void levelordertraversal()
+{
+    int h=height(root);
+    printf("Height=%d",h);
+    getch();
+    for(int i=0; i<h; i++)
+        printer(i,root);
+}
+
 int main()
 {
     int in;
@@ -68,7 +106,7 @@ int main()
     do
     {
         system("cls");
-        printf("1.Insert element\n2.Search element\n");
+        printf("1.Insert element\n2.Search element\n3.Level order traversal\n");
         scanf("%d",&in);
         switch(in)
         {
@@ -82,7 +120,10 @@ int main()
                 printf("Not found");
             getch();
             break;
-            
+            case 3:
+            levelordertraversal();
+            getch();
+            break;
         }
     }while(in!=-1);
     return 0;
