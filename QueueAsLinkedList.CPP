@@ -16,8 +16,8 @@ class queue
   {
    node *t=new node;
    t->data=item;
-   t->next=NULL;
-   if(rear==NULL)
+   t->next=NULL; //remember
+   if(rear==NULL) //remember
    {
     rear=t;
     front=t;
@@ -35,7 +35,7 @@ class queue
    {
    node *t=front;
    front=front->next;
-   if(front==NULL)
+   if(front==NULL) //this one is imp too
    rear=NULL;
    delete t;
    }
