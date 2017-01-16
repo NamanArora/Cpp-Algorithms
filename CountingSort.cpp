@@ -11,6 +11,9 @@ void counting(int a[])
     for(int i=0; i<9; i++)
         ++count[a[i]];
     
+    //So that we know how many max spaces we need for a number(incase of repitions)
+    //we reserve space according
+    //Other numbers don't matter because they add nothing to the sum. So no space for them.
     for(int i=1; i<9; i++)
         count[i]+=count[i-1];
         
